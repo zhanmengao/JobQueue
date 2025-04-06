@@ -3,7 +3,7 @@ package freequeue
 import (
 	"context"
 	"fmt"
-	"forevernine.com/midplat/base_libs/queue/qtyp"
+	"github.com/zhanmengao/JobQueue/qtyp"
 	"math/rand"
 	"strconv"
 	"sync"

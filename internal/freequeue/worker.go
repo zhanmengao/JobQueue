@@ -1,9 +1,9 @@
 package freequeue
 
 import (
-	"forevernine.com/midplat/base_libs/errors"
-	"forevernine.com/midplat/base_libs/queue/internal/qutil"
-	"forevernine.com/midplat/base_libs/queue/qtyp"
+	"errors"
+	"github.com/zhanmengao/JobQueue/internal/qutil"
+	"github.com/zhanmengao/JobQueue/qtyp"
 	"sync"
 )
 
@@ -31,7 +31,7 @@ func (worker *tWorker) Push(job *qutil.TJob) (isBusy bool, err error) {
 		default:
 			isBusy = true
 			worker.wg.Done()
-			err = errors.BadRequest("", "busy")
+			err = errors.New("busy")
 		}
 	} else {
 		worker.wg.Add(1)
